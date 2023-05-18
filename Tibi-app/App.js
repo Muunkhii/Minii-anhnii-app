@@ -4,13 +4,15 @@ import { Animated, Dimensions, Image, Platform, SafeAreaView, StyleSheet, Text, 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
 // Plus...
 import plus from './assets/plus.png'
 
 // Font Awesome Icons...
-import { FontAwesome5 } from '@expo/vector-icons'
+import { FontAwesome5, Ionicons } from '@expo/vector-icons'
 import { useRef } from 'react';
-import HomeScreen from './Source/Screens/HomeScreen'
+import HomeScreen from './Source/Screens/HomeScreen' ;
+import ChatScreen from './Source/Screens/ChatScreen' ;
 const Tab = createBottomTabNavigator();
 
 // Hiding Tab Names...
@@ -51,7 +53,7 @@ export default function App() {
             <View style={{
               // centring Tab Button...
               position: 'absolute',
-              top: 20
+              top: 15
             }}>
               <FontAwesome5
                 name="home"
@@ -77,11 +79,9 @@ export default function App() {
               position: '',
             
             }}>
-              <FontAwesome5
-                name="search"
-                size={20}
-                color={focused ? 'red' : 'gray'}
-              ></FontAwesome5>
+              <Ionicons name ="restaurant-outline"
+               size={20}
+               ></Ionicons>
             </View>
           )
         }} listeners={({ navigation, route }) => ({
@@ -123,18 +123,16 @@ export default function App() {
           )
         }}></Tab.Screen>
 
-        <Tab.Screen name={"Notifications"} component={NotificationScreen} options={{
+        <Tab.Screen name={"Зөвлөгөө"} component={ChatScreen} options={{
           tabBarIcon: ({ focused }) => (
             <View style={{
               // centring Tab Button...
               position: 'absolute',
               top: 20
             }}>
-              <FontAwesome5
-                name="bell"
-                size={20}
-                color={focused ? 'red' : 'gray'}
-              ></FontAwesome5>
+              <Ionicons name="chatbox-ellipses-outline"
+              size={25}
+              bottom={10} ></Ionicons>
             </View>
           )
         }} listeners={({ navigation, route }) => ({
@@ -219,13 +217,6 @@ function SettingsScreen() {
 
 
 
-function NotificationScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
 
 function SearchScreen() {
   return (

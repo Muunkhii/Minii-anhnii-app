@@ -1,11 +1,11 @@
-import { View, Text , SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native'
+import { View, Text , SafeAreaView, StyleSheet, TouchableOpacity,ScrollView} from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeScreen (){
     return(
       <SafeAreaView style={styles.container} >
+         <ScrollView>
          <Text style={{ left:25, fontWeight:200, }}>ЛХА,5capын 17 </Text>
          <View> 
          <Ionicons name="md-sunny-sharp"
@@ -64,11 +64,11 @@ export default function HomeScreen (){
             ></Ionicons>
              <View style={{
                 width: 390 ,
-                height: 100,
+                height: 80,
                 backgroundColor:'white',
-                paddingHorizontal: 10,
-                paddingVertical: 9,
-                borderRadius: 7,
+                paddingHorizontal: 8,
+                paddingVertical: 7,
+                borderRadius: 6,
                 backgroundColor: 'white',
                 alignSelf: 'flex-start',
                 marginHorizontal: '2%',
@@ -76,8 +76,30 @@ export default function HomeScreen (){
                 minWidth: '48%',
                 left: 5,
                 right: 5,
-                bottom: 14,
-             }} />
+                bottom: 8,
+             }}>
+               <Text style={{
+                  fontSize: 20 ,
+                  flex : 0,
+                  left : 45,
+                  top : 20
+                  
+
+               }} > Хоол бүртгэх
+
+               </Text>
+               <Ionicons name="flame-outline"
+               size={30}
+               bottom={5}
+               left={0}
+               color={'gray'}
+
+               Ionicons/>
+               <Ionicons name="add-outline"
+               size={30}
+               left={340}
+               bottom={35}> </Ionicons>
+             </View>
              <Text style={{
                 left:20,
                 fontWeight: 900,
@@ -110,7 +132,7 @@ export default function HomeScreen (){
                 bottom: 30,
              }}/>
              
-             
+             </ScrollView>
 
       </SafeAreaView>
       
