@@ -13,6 +13,7 @@ import { FontAwesome5, Ionicons } from '@expo/vector-icons'
 import { useRef } from 'react';
 import HomeScreen from './Source/Screens/HomeScreen' ;
 import ChatScreen from './Source/Screens/ChatScreen' ;
+import SearchScreen from './Source/Screens/SearchScreen';
 const Tab = createBottomTabNavigator();
 
 // Hiding Tab Names...
@@ -126,7 +127,6 @@ export default function App() {
         <Tab.Screen name={"Зөвлөгөө"} component={ChatScreen} options={{
           tabBarIcon: ({ focused }) => (
             <View style={{
-              // centring Tab Button...
               position: 'absolute',
               top: 20
             }}>
@@ -136,7 +136,6 @@ export default function App() {
             </View>
           )
         }} listeners={({ navigation, route }) => ({
-          // Onpress Update....
           tabPress: e => {
             Animated.spring(tabOffsetValue, {
               toValue: getWidth() * 3,
@@ -218,13 +217,7 @@ function SettingsScreen() {
 
 
 
-function SearchScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Search!</Text>
-    </View>
-  );
-}
+
 
 const styles = StyleSheet.create({
   container: {
